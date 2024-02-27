@@ -1,10 +1,36 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import { Navigate } from "react-router-dom";
 import React from "react";
+import mobileBackgroundImage from "../assets/brand/anthea-blu-mobile.png";
+import desktopBackgroundImage from "../assets/brand/anthea-blu-desktop.png";
 
-export const Home = () => {
-  const [message, setMessage] = useState("");
+export const Home = (user) => {
+  // const [message, setMessage] = useState("");
+  const [backgroundImage, setBackgroundImage] = useState(
+    desktopBackgroundImage
+  );
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      // Set threshold for mobile devices, e.g., 768px
+      const threshold = 768;
+      const screenWidth = window.innerWidth;
+      if (screenWidth < threshold) {
+        setBackgroundImage(mobileBackgroundImage);
+      } else {
+        setBackgroundImage(desktopBackgroundImage);
+      }
+    };
+
+    // Call checkScreenSize on component mount
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem("access_token") === null) {
@@ -18,7 +44,7 @@ export const Home = () => {
             },
           });
 
-          setMessage(data.message);
+          // setMessage(data.message);
         } catch (e) {
           console.log("not auth");
         }
@@ -27,8 +53,17 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="form-signin mt-5 text-center">
-      <h3>Hi {message}</h3>
+    <div
+      className="form-signin text-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "contain", // Changed to cover to ensure it covers the whole screen without repeating
+        backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center",
+        height: "100vh",
+      }}
+    >
+      <h3 style={{ color: "black" }}>Welcome back, {user.userName}</h3>
     </div>
   );
 };

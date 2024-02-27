@@ -12,7 +12,7 @@ class HomeView(APIView):
 
     def get(self, request):
         content = {
-            'message': 'Welcome to the JWT Authentication page using React Js and Django!'}
+            'message': 'MJ'}
         return Response(content)
 
 

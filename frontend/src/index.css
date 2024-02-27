@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Auth-form-container {
+  width: 25%;
+  margin: 0 auto;
+  background-color: #E3E2DE;
+  padding: 1%;
+}
+

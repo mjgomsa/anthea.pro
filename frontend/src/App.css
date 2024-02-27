@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont.ttf') format('truetype');
+  font-weight: 100 900; /* Adjust based on the actual weight range supported by the font */
+}
+
 .App {
   text-align: center;
 }
@@ -7,32 +13,129 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.profilePicture {
+  width: 145px; 
+  margin: auto;
+  display: block;
+  padding-top: 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.valuationParagraph{
+  text-align: center;
+}
+
+.prof_name {
+  text-align: center;
+  font-weight: 800;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 124px); /* 3 columns with fixed width */
+  gap: 3px; /* Adjust the gap between images */
+  justify-content: center; /* Center the columns */
+  margin: 0 auto; /* Ensure the grid is centered within its container */
+}
+
+.gallery-container img{
+  width: 124px;
+}
+
+.product-passport{
+  background-color: #E8E7E3;
+  text-align: center;
+  
+}
+
+.product-thumbnail{
+  mix-blend-mode: darken;
+  width: 170px;
+  
+}
+
+.product-card{
+  background-color: white;
+  margin: 17px;
+  border-radius: 21px;
+}
+
+.cardRow {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cardColumn {
+  text-align: left;
+  /* border: 1px solid red; */
+  /* width: 100%; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4 {
+  color: #000;
+  font-family: 'Inter';
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+  width: 5.11925rem;
+  text-align: right;
+  margin-left: 0.56rem;
+  /* border: 1px solid red; */
+  width: 9rem;
+  font-size: 16px;
+}
+
+.productName {
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 2.1rem !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+  /* border: 1px solid blue; */
+  padding: 5px;
+  font-size: 14px;
+  padding-top:5px;
+  padding-bottom: 20px;
+
+}
+
+h5 {
+  font-family: 'Inter';
+  font-size: 0.5625rem;
+  font-style: normal;
+  font-weight: 200 !important;
+  line-height: normal;
+  /* border: 1px solid blue; */
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.barcode {
+  margin-top: 10%;
+  width: 221px;
+}
+
+.companyLogo{
+
+  width: 40%;
+  /* display: block;
+  margin-left: auto; */
+  padding: 20px;
+}
+
+.product-passport{
+  height: 105vh;
+}
+
+.antheaWallet{
+  width: 155px;
+  margin-top: 20px;
+}
+
+
+.productButtons{
+  /* float: right; */
+  width: 7%;
+  /* margin-right: 20px;
+  margin-top: 5px; */
 }
